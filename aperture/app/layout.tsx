@@ -35,8 +35,8 @@ export default function RootLayout({
       <body
         className={`${geistSans.variable} ${geistMono.variable} ${poppins.variable} antialiased`}
       >
-        <nav className="flex flex-row p-3">
-          <div className="pl-5 basis-22">
+        <nav className="flex flex-row p-3 top-0 left-0 right-0">
+          <div className="pl-5 basis-22 animate__animated animate__rollIn">
             <Image 
             src="/aperture-logo.png"
             alt="Aperture Science Logo"
@@ -48,7 +48,7 @@ export default function RootLayout({
           <div className="basis-412 place-self-center">
             {/* <p className="font-poppins font-medium pl-3">Aperture Science</p> */}
           </div>
-          <div className="basis-128 flex-row place-self-center text-end">
+          <div className="basis-200 flex-row place-self-center text-end ">
             <Link href="/about" className="p-4">About</Link>
             <Link href="/about" className="p-4">Employees</Link>
             <Link href="/about" className="p-4">Log In</Link>

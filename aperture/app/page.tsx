@@ -1,10 +1,14 @@
 import Image from "next/image";
+import 'animate.css';
 
 export default function Home() {
   return (
-    <div className="font-sans grid grid-rows-[20px_1fr_20px] min-h-screen p-8 pb-20 gap-16 sm:p-20">
+    <div className="font-sans grid grid-rows-[20px_1fr_20px] min-h-screen p-8 pb-20 gap-16 sm:p-20 bg-cover bg-center bg-no-repeat bg-[url(/wheatley.jpg)]">
+      <div className="absolute bg-gradient-to-t from-black via-transparent to-transparent"></div>
+      {/* <div className="bg-white/30 backdrop-blur-md"></div> */}
       <main className="flex flex-col gap-[32px] row-start-2 items-center sm:items-start">
-        <h1 className="text-5xl font-semibold tracking-tight text-balance text-gray-900 sm:text-7xl">Doing what we must, because we can...</h1>
+        <h1 className="text-5xl font-semibold tracking-tight text-balance text-white sm:text-7xl animate__animated animate__fadeInDown">Doing what we must, because we can...</h1>
+        <p className="text-white text-shadow-lg">Innovating the future, one test subject at a time. Experience the cutting edge of scientific advancement.</p>
         <div className="flex gap-4 items-center flex-col sm:flex-row">
           <a
             className="rounded-full border border-solid border-transparent transition-colors flex items-center justify-center bg-foreground text-background gap-2 hover:bg-[#383838] dark:hover:bg-[#ccc] font-medium text-sm sm:text-base h-10 sm:h-12 px-4 sm:px-5 sm:w-auto"
