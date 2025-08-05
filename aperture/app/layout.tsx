@@ -4,13 +4,18 @@ import "./globals.css";
 import Image from 'next/image'
 import Link from 'next/link'
 import { Popover, PopoverButton, PopoverPanel } from '@headlessui/react'
-import { ChevronDownIcon, PhoneIcon, PlayCircleIcon } from '@heroicons/react/20/solid'
+import { ChevronDownIcon, PhoneIcon, CloudIcon, IdentificationIcon } from '@heroicons/react/20/solid'
 import {
   ArrowPathIcon,
-  ChartPieIcon,
+  ShieldCheckIcon,
+  FireIcon,
+  LockClosedIcon,
   CursorArrowRaysIcon,
   FingerPrintIcon,
   SquaresPlusIcon,
+  ClockIcon,
+  GlobeAltIcon,
+  InformationCircleIcon
 } from '@heroicons/react/24/outline'
 
 const geistSans = Geist({
@@ -30,15 +35,15 @@ const poppins = Poppins({
 });
 
 const solutions = [
-  { name: 'Analytics', description: 'Get a better understanding of your traffic', href: '#', icon: ChartPieIcon },
-  { name: 'Engagement', description: 'Speak directly to your customers', href: '#', icon: CursorArrowRaysIcon },
-  { name: 'Security', description: "Your customers' data will be safe and secure", href: '#', icon: FingerPrintIcon },
-  { name: 'Integrations', description: 'Connect with third-party tools', href: '#', icon: SquaresPlusIcon },
-  { name: 'Automations', description: 'Build strategic funnels that will convert', href: '#', icon: ArrowPathIcon },
+  { name: 'Web Application Firewall (WAF)', description: 'See how you can get blocked, challenged, and more', href: '/waf', icon: FireIcon },
+  { name: 'SSL/TLS', description: 'Certificates, validation, and security', href: '#', icon: LockClosedIcon },
+  { name: 'Rate Limiting', description: "Prevent spam from reaching your origin", href: '#', icon: ClockIcon },
+  { name: 'DNS', description: 'Check out our on-premise site', href: 'https://onprem.aperturescience.xyz/', icon: GlobeAltIcon },
+  { name: 'Everything else', description: 'Check it out', href: '#', icon: InformationCircleIcon },
 ]
 const callsToAction = [
-  { name: 'Watch demo', href: '#', icon: PlayCircleIcon },
-  { name: 'Contact sales', href: '#', icon: PhoneIcon },
+  { name: 'Cloudflare Dashboard', href: 'https://dash.cloudflare.com', icon: CloudIcon },
+  { name: 'Zero-Trust Dashboard', href: 'https://one.dash.cloudflare.com', icon: IdentificationIcon },
 ]
 
 export const metadata: Metadata = {

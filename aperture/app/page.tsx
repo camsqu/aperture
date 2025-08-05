@@ -23,12 +23,12 @@ export default function Home() {
             Get blocked
           </a>
           <a
-            className="rounded-full transition-colors backdrop-blur-sm flex items-center text-background justify-center hover:bg-[#f2f2f2] dark:hover:bg-[#1a1a1a] hover:border-transparent hover:text-foreground font-medium text-sm sm:text-base h-10 sm:h-12 px-4 sm:px-5 w-full sm:w-auto md:w-[158px]"
-            href="https://nextjs.org/docs?utm_source=create-next-app&utm_medium=appdir-template-tw&utm_campaign=create-next-app"
+            className="rounded-full transition-colors backdrop-blur-sm flex items-center text-background justify-center hover:bg-[#f2f2f2] dark:hover:bg-[#1a1a1a] hover:border-transparent hover:text-foreground font-medium text-sm sm:text-base h-10 sm:h-12 px-4 sm:px-5 w-full sm:w-auto md:w-[188px]"
+            href="https://developers.cloudflare.com"
             target="_blank"
             rel="noopener noreferrer"
           >
-            Learn more
+            Cloudflare Docs
           </a>
         </div>
       </main>
