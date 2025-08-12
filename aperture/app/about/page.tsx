@@ -4,19 +4,19 @@ import 'animate.css'; // Ensure you have animate.css installed for the fadeInDow
 
 const AboutPage: React.FC = () => {
   return (
-    <div className="font-sans grid grid-rows-[20px_1fr_20px] min-h-screen p-8 pb-20 gap-16 sm:p-20 bg-cover bg-center bg-no-repeat bg-[url(/bots2.jpg)]">
+    <div className="font-sans grid grid-rows-[20px_1fr_20px] min-h-screen p-8 pb-20 gap-16 sm:p-20 bg-cover bg-center bg-no-repeat">
       <main className="flex flex-col gap-[32px] row-start-2 items-center sm:items-start">
-        <h1 className="text-5xl font-semibold tracking-tight text-balance text-white sm:text-7xl animate__animated animate__fadeInDown">
+        <h1 className="text-5xl font-semibold tracking-tight text-balance text-foreground sm:text-7xl animate__animated animate__fadeInDown">
           About Aperture Science
         </h1>
-        <p className="text-white text-shadow-lg text-lg leading-relaxed">
-          Founded in the 1940s by the visionary **Cave Johnson**, Aperture Science began its humble journey as a manufacturer of shower curtains. Who knew that such mundane beginnings would pave the way for groundbreaking, if occasionally explosive, scientific advancements? Our early triumphs include "Aperture Fixtures" – a full line of shower curtains designed for all occasions – and "Aperture Science Innovators," where we pioneered the art of transforming ordinary moon rocks into extraordinary (and remarkably useless) healing gels.
+        <p className="text-foreground text-lg leading-relaxed">
+          Founded in the 1940s by the visionary <b>Cave Johnson</b>, Aperture Science began its humble journey as a manufacturer of shower curtains. Who knew that such mundane beginnings would pave the way for groundbreaking, if occasionally explosive, scientific advancements? Our early triumphs include "Aperture Fixtures" – a full line of shower curtains designed for all occasions – and "Aperture Science Innovators," where we pioneered the art of transforming ordinary moon rocks into extraordinary (and remarkably useless) healing gels.
         </p>
-        <p className="text-white text-shadow-lg text-lg leading-relaxed">
+        <p className="text-foreground text-lg leading-relaxed">
           Through the decades, Aperture Science has consistently pushed the boundaries of ethical and physical possibility. Our commitment to rigorous testing, often involving volunteer (and sometimes less-than-volunteer) human subjects, is unwavering. We believe that true progress can only be achieved through relentless experimentation, even if it occasionally results in minor temporal displacement or the creation of sentient, morally ambiguous AI.
         </p>
-        <p className="text-white text-shadow-lg text-lg leading-relaxed">
-          Today, Aperture Science stands as a beacon of innovation, particularly in the fields of portal technology, advanced robotics, and highly dangerous but incredibly fun testing environments. We're proud of our contributions to science, including but not limited to, the **Portable Aperture Science Handheld Portal Device**, genetic life form and disk operating systems, and a patented line of combustible lemons. Join us in shaping a brighter, more experimental, and potentially lethal future.
+        <p className="text-foreground text-lg leading-relaxed">
+          Today, Aperture Science stands as a beacon of innovation, particularly in the fields of portal technology, advanced robotics, and highly dangerous but incredibly fun testing environments. We're proud of our contributions to science, including but not limited to, the <b>Portable Aperture Science Handheld Portal Device</b>, genetic life form and disk operating systems, and a patented line of combustible lemons. Join us in shaping a brighter, more experimental, and potentially lethal future.
         </p>
         <div className="flex gap-4 items-center flex-col sm:flex-row mt-8">
           <a
@@ -46,7 +46,7 @@ const AboutPage: React.FC = () => {
       </main>
       <footer className="row-start-3 flex gap-[24px] flex-wrap items-center justify-center">
         <a
-          className="flex items-center gap-2 hover:underline hover:underline-offset-4 text-white"
+          className="flex items-center gap-2 hover:underline hover:underline-offset-4 text-foreground"
           href="https://www.thinkwithportals.com/" // Official Portal game site or similar
           target="_blank"
           rel="noopener noreferrer"
@@ -61,7 +61,7 @@ const AboutPage: React.FC = () => {
           Think With Portals
         </a>
         <a
-          className="flex items-center gap-2 hover:underline hover:underline-offset-4 text-white"
+          className="flex items-center gap-2 hover:underline hover:underline-offset-4 text-foreground"
           href="https://store.steampowered.com/app/620/Portal_2/" // Link to Portal 2 on Steam
           target="_blank"
           rel="noopener noreferrer"
@@ -76,7 +76,7 @@ const AboutPage: React.FC = () => {
           Experience Our Work
         </a>
         <a
-          className="flex items-center gap-2 hover:underline hover:underline-offset-4 text-white"
+          className="flex items-center gap-2 hover:underline hover:underline-offset-4 text-foreground"
           href="https://valvesoftware.com/" // Valve's main site
           target="_blank"
           rel="noopener noreferrer"
