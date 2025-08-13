@@ -15,7 +15,8 @@ import {
   SquaresPlusIcon,
   ClockIcon,
   GlobeAltIcon,
-  InformationCircleIcon
+  InformationCircleIcon,
+  ArrowsPointingOutIcon
 } from '@heroicons/react/24/outline'
 
 const geistSans = Geist({
@@ -36,8 +37,9 @@ const poppins = Poppins({
 
 const solutions = [
   { name: 'Web Application Firewall (WAF)', description: 'See how you can get blocked, challenged, and more', href: '/waf', icon: FireIcon },
-  { name: 'SSL/TLS', description: 'Certificates, validation, and security', href: '#', icon: LockClosedIcon },
-  { name: 'Rate Limiting', description: "Prevent spam from reaching your origin", href: '#', icon: ClockIcon },
+  { name: 'SSL/TLS', description: 'Certificates, validation, and security', href: '/ssl', icon: LockClosedIcon },
+  { name: 'Rate Limiting', description: "Prevent spam from reaching your origin", href: '/rl', icon: ClockIcon },
+  { name: 'Load Balancing', description: "Distribute traffic across multiple servers", href: '/lb', icon: ArrowsPointingOutIcon },
   { name: 'DNS', description: 'Check out our on-premise site', href: 'https://onprem.aperturescience.xyz/', icon: GlobeAltIcon },
   { name: 'Everything else', description: 'Check it out', href: '#', icon: InformationCircleIcon },
 ]
