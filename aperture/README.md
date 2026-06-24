@@ -1,36 +1,70 @@
-This is a [Next.js](https://nextjs.org) project bootstrapped with [`create-next-app`](https://nextjs.org/docs/app/api-reference/cli/create-next-app).
+# Aperture Science — Cloudflare SE Demo
 
-## Getting Started
+A mock enterprise website for **Aperture Science** (aperturescience.xyz) used to
+demonstrate the Cloudflare platform end-to-end. Built with **Next.js (App Router)**
+and deployed to **Cloudflare Workers** via [`@opennextjs/cloudflare`](https://opennext.js.org/cloudflare).
 
-First, run the development server:
+> "We do what we must, because we can."
+
+## Stack
+
+- **Next.js 15** (App Router, React 19, Tailwind v4)
+- **Cloudflare Workers** runtime via OpenNext adapter
+- **Wrangler** for config/deploy
+
+## Feature map
+
+Each route is designed to demonstrate a Cloudflare feature. Some are pure app code,
+others are *trigger surfaces* for behavior configured in the Cloudflare dashboard.
+
+| Route | Demonstrates | Where configured |
+| --- | --- | --- |
+| `/` | Hero / landing, video bg | App |
+| `/about` | Company lore | App |
+| `/ai` | AI overview hub | App |
+| `/ai` chat widget | **Workers AI** (Llama 3.3) + **AI Gateway** streaming chat | App + `AI` binding + dashboard gateway |
+| `/ai/search` | **AI Search (AutoRAG)** RAG over Aperture lore | App + `AI_SEARCH` binding + dashboard instance |
+| `/waf` | **WAF** block / challenge / log, **AI bot mitigation / AI Labyrinth** | Dashboard rules; app provides links |
+| `/login` | **Turnstile** | App + Turnstile keys |
+| `/ssl` | **SSL/TLS** edge info | App (surfaces `request.cf`) |
+| `/rl` | **Rate Limiting** | Dashboard rule; app provides trigger |
+| `/lb` | **Load Balancing** origin info | Dashboard pool; app surfaces origin |
+| `robots.txt` / `llms.txt` | **AI Crawl Control** / Pay Per Crawl | Static + dashboard |
+| on-prem (`index.html`) | DNS to GCP origin via `onprem.aperturescience.xyz` | DNS |
+
+## Cloudflare bindings
+
+Defined in `wrangler.jsonc` (typed in `cloudflare-env.d.ts` via `npm run cf-typegen`):
+
+- `AI` — Workers AI + AI Gateway
+- `AI_SEARCH` — AI Search (AutoRAG) namespace
+- `LORE` (R2) — source documents for AI Search
+- `KV` — feature flags / announcement banner
+- `DB` (D1) — "Apply to Test" signups
+- Turnstile site/secret keys
+
+## Local development
 
 ```bash
-npm run dev
-# or
-yarn dev
-# or
-pnpm dev
-# or
-bun dev
+npm install
+npm run dev        # Next dev server (bindings via initOpenNextCloudflareForDev)
 ```
 
-Open [http://localhost:3000](http://localhost:3000) with your browser to see the result.
+Preview in the actual Workers runtime:
 
-You can start editing the page by modifying `app/page.tsx`. The page auto-updates as you edit the file.
+```bash
+npm run preview    # opennextjs-cloudflare build && preview
+```
 
-This project uses [`next/font`](https://nextjs.org/docs/app/building-your-application/optimizing/fonts) to automatically optimize and load [Geist](https://vercel.com/font), a new font family for Vercel.
+## Deploy
 
-## Learn More
+```bash
+npm run deploy     # opennextjs-cloudflare build && deploy
+npm run cf-typegen # regenerate binding types after editing wrangler.jsonc
+```
 
-To learn more about Next.js, take a look at the following resources:
+## Dashboard checklist
 
-- [Next.js Documentation](https://nextjs.org/docs) - learn about Next.js features and API.
-- [Learn Next.js](https://nextjs.org/learn) - an interactive Next.js tutorial.
-
-You can check out [the Next.js GitHub repository](https://github.com/vercel/next.js) - your feedback and contributions are welcome!
-
-## Deploy on Vercel
-
-The easiest way to deploy your Next.js app is to use the [Vercel Platform](https://vercel.com/new?utm_medium=default-template&filter=next.js&utm_source=create-next-app&utm_campaign=create-next-app-readme) from the creators of Next.js.
-
-Check out our [Next.js deployment documentation](https://nextjs.org/docs/app/building-your-application/deploying) for more details.
+See `DASHBOARD.md` for the one-time Cloudflare dashboard setup (AI Gateway,
+AI Search instance, R2 bucket, KV namespace, D1 database, Turnstile widget,
+WAF / Rate Limiting / Load Balancing / AI Crawl Control rules).

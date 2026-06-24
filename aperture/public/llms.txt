@@ -1,0 +1,24 @@
+# Aperture Science
+
+> Aperture Science is a (fictional) research company used as a demo environment
+> for the Cloudflare platform. The site runs entirely on Cloudflare Workers
+> (Next.js via OpenNext) and showcases Cloudflare's AI and security products.
+
+## About
+
+- [About Aperture Science](https://aperturescience.xyz/about): Company history and mission.
+
+## Cloudflare AI
+
+- [Cloudflare AI overview](https://aperturescience.xyz/ai): Workers AI, AI Gateway, AI Search, AI Crawl Control.
+- [AI Search](https://aperturescience.xyz/ai/search): RAG over the Aperture lore archive.
+
+## Security demos
+
+- [Web Application Firewall](https://aperturescience.xyz/waf): Block, challenge, log, and AI bot mitigation.
+- [Login (Turnstile)](https://aperturescience.xyz/login): Bot-resistant authentication.
+
+## Notes
+
+This site is a demonstration. AI crawler access is governed by robots.txt and
+Cloudflare AI Crawl Control (including Pay Per Crawl).

@@ -4,15 +4,13 @@ import "./globals.css";
 import Image from 'next/image'
 import Link from 'next/link'
 import { Popover, PopoverButton, PopoverPanel } from '@headlessui/react'
-import { ChevronDownIcon, PhoneIcon, CloudIcon, IdentificationIcon } from '@heroicons/react/20/solid'
+import Chat from './components/Chat'
+import Banner from './components/Banner'
+import { ChevronDownIcon, CloudIcon, IdentificationIcon } from '@heroicons/react/20/solid'
 import {
-  ArrowPathIcon,
-  ShieldCheckIcon,
+  SparklesIcon,
   FireIcon,
   LockClosedIcon,
-  CursorArrowRaysIcon,
-  FingerPrintIcon,
-  SquaresPlusIcon,
   ClockIcon,
   GlobeAltIcon,
   InformationCircleIcon,
@@ -36,6 +34,7 @@ const poppins = Poppins({
 });
 
 const solutions = [
+  { name: 'Cloudflare AI', description: 'Workers AI, AI Gateway, AI Search & AI Crawl Control', href: '/ai', icon: SparklesIcon },
   { name: 'Web Application Firewall (WAF)', description: 'See how you can get blocked, challenged, and more', href: '/waf', icon: FireIcon },
   { name: 'SSL/TLS', description: 'Certificates, validation, and security', href: '/ssl', icon: LockClosedIcon },
   { name: 'Rate Limiting', description: "Prevent spam from reaching your origin", href: '/rl', icon: ClockIcon },
@@ -87,7 +86,7 @@ export default function RootLayout({
 
               <PopoverPanel
                 transition
-                className="absolute flex flex-col sm:-right-80 -right-79 z-10 mt-5 flex sm:w-screen max-w-max -translate-x-1/2 bg-transparent px-4 transition data-closed:translate-y-1 data-closed:opacity-0 data-enter:duration-200 data-enter:ease-out data-leave:duration-150 data-leave:ease-in"
+                className="absolute flex flex-col sm:-right-80 -right-79 z-50 mt-5 flex sm:w-screen max-w-max -translate-x-1/2 bg-transparent px-4 transition data-closed:translate-y-1 data-closed:opacity-0 data-enter:duration-200 data-enter:ease-out data-leave:duration-150 data-leave:ease-in"
               >
                 <div className="w-screen max-w-md flex-auto overflow-hidden rounded-3xl bg-white text-sm/6 shadow-lg ring-1 ring-gray-900/5">
                   <div className="p-4">
@@ -123,8 +122,10 @@ export default function RootLayout({
             </Popover>
             <Link href="/login" className="">Login</Link>
           </div>
+          <Banner />
         </nav>
         {children}
+        <Chat />
       </body>
     </html>
   );

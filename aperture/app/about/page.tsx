@@ -21,17 +21,8 @@ const AboutPage: React.FC = () => {
         <div className="flex gap-4 items-center flex-col sm:flex-row mt-8">
           <a
             className="rounded-full border border-solid border-transparent transition-colors flex items-center justify-center bg-foreground text-background gap-2 hover:bg-[#383838] dark:hover:bg-[#ccc] font-medium text-sm sm:text-base h-10 sm:h-12 px-4 sm:px-5 sm:w-auto"
-            href="https://www.valvesoftware.com/en/about" // Placeholder for a more relevant "Join Us" link
-            target="_blank"
-            rel="noopener noreferrer"
+            href="/apply"
           >
-            <Image
-              className="dark:invert"
-              src="/vercel.svg" // Consider replacing this with an Aperture Science icon if you have one
-              alt="Join Aperture Science"
-              width={20}
-              height={20}
-            />
             Apply to Test
           </a>
           <a

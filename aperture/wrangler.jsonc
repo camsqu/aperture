@@ -1,12 +1,58 @@
 {
+  "$schema": "node_modules/wrangler/config-schema.json",
   "main": ".open-next/worker.js",
   "name": "aperture",
-  "compatibility_date": "2025-03-25",
+  "compatibility_date": "2025-06-01",
   "compatibility_flags": [
     "nodejs_compat"
   ],
   "assets": {
     "directory": ".open-next/assets",
     "binding": "ASSETS"
+  },
+  // Smart Placement runs the Worker close to your backend services.
+  "placement": {
+    "mode": "smart"
+  },
+  // Workers Logs / observability for the AI + WAF demos.
+  "observability": {
+    "enabled": true
+  },
+  // Workers AI + AI Gateway (env.AI)
+  "ai": {
+    "binding": "AI"
+  },
+  // AI Search (formerly AutoRAG) namespace binding (env.AI_SEARCH)
+  "ai_search_namespaces": [
+    {
+      "binding": "AI_SEARCH",
+      "namespace": "default"
+    }
+  ],
+  // R2 bucket holding the Aperture "lore" documents indexed by AI Search.
+  "r2_buckets": [
+    {
+      "binding": "LORE",
+      "bucket_name": "aperture-lore"
+    }
+  ],
+  // KV namespace for the announcement banner / feature flags.
+  "kv_namespaces": [
+    {
+      "binding": "KV",
+      "id": "55ef3bc36ba94468af4b40496404b479"
+    }
+  ],
+  // D1 database for the "Apply to Test" signup guestbook.
+  "d1_databases": [
+    {
+      "binding": "DB",
+      "database_name": "aperture-db",
+      "database_id": "83149ccf-e523-4b2d-bf86-179ec971ecba"
+    }
+  ],
+  // Public Turnstile site key (the secret is set via `wrangler secret put TURNSTILE_SECRET_KEY`).
+  "vars": {
+    "TURNSTILE_SITE_KEY": "0x4AAAAAADp7Bgjm-PiAuqBL"
   }
 }

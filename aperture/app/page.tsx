@@ -1,6 +1,5 @@
 import Image from "next/image";
 import 'animate.css';
-import { Button } from '@headlessui/react'
 
 export default function Home() {
   return (

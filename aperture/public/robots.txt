@@ -1,0 +1,23 @@
+# Aperture Science — robots.txt
+# Managed in tandem with Cloudflare AI Crawl Control.
+# AI Crawl Control can enforce these directives at the edge and report
+# compliance via AI Audit analytics.
+
+User-agent: *
+Allow: /
+Disallow: /login
+
+# Example AI crawler directives (also enforceable via AI Crawl Control / Pay Per Crawl).
+User-agent: GPTBot
+Disallow: /
+
+User-agent: ClaudeBot
+Disallow: /
+
+User-agent: CCBot
+Disallow: /
+
+User-agent: Google-Extended
+Disallow: /
+
+Sitemap: https://aperturescience.xyz/sitemap.xml
