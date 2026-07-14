@@ -35,6 +35,7 @@ const poppins = Poppins({
 
 const solutions = [
   { name: 'Cloudflare AI', description: 'Workers AI, AI Gateway, AI Search & AI Crawl Control', href: '/ai', icon: SparklesIcon },
+  { name: 'Cloudflare Access', description: 'Zero Trust identity & JWT validation', href: '/access', icon: IdentificationIcon },
   { name: 'Web Application Firewall (WAF)', description: 'See how you can get blocked, challenged, and more', href: '/waf', icon: FireIcon },
   { name: 'SSL/TLS', description: 'Certificates, validation, and security', href: '/ssl', icon: LockClosedIcon },
   { name: 'Rate Limiting', description: "Prevent spam from reaching your origin", href: '/rl', icon: ClockIcon },

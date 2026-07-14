@@ -4,12 +4,12 @@ export default function Home() {
   return (
     <div className="font-sans grid grid-rows-[20px_1fr_20px] min-h-screen pt-8 pb-20 gap-16 sm:p-20 bg-cover bg-center bg-no-repeat bg-[url(/wheatley.jpg)]">
       <div className="my-12 sm:my-5 mx-5 sm:mx-0">
-        <h1 className="text-4xl font-bold py-5">Web Application Firewall</h1>
-        <p className="">Welcome! Here are some of the filtering options, give them a try!</p>
+        <h1 className="text-4xl font-bold py-5 text-white drop-shadow-lg">Web Application Firewall</h1>
+        <p className="text-gray-200 drop-shadow">Welcome! Here are some of the filtering options, give them a try!</p>
       </div>
       <div className="sm:flex flex-row gap-5 my-15 justify-center sm:justify-start px-8 sm:px-0">
         <a
-          className="rounded-full border border-solid border-transparent transition-colors flex items-center justify-center bg-foreground text-background gap-2 hover:bg-[#a13e37] hover:text-background dark:hover:bg-[#ccc] font-medium text-sm sm:text-base h-10 sm:h-12 px-4 sm:px-5 my-8 sm:my-0 sm:w-auto"
+          className="rounded-full border border-solid border-transparent transition-colors flex items-center justify-center bg-neutral-900 text-white border-white/10 gap-2 hover:bg-[#a13e37] hover:text-white font-medium text-sm sm:text-base h-10 sm:h-12 px-4 sm:px-5 my-8 sm:my-0 sm:w-auto"
           href="/block-page"
         >
           <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" strokeWidth="1.5" stroke="currentColor" className="size-6">
@@ -19,7 +19,7 @@ export default function Home() {
           Get blocked
         </a>
         <a
-          className="rounded-full border border-solid border-transparent transition-colors flex items-center justify-center bg-foreground text-background gap-2 hover:bg-[#c27529] hover:text-background dark:hover:bg-[#ccc] font-medium text-sm sm:text-base h-10 sm:h-12 px-4 sm:px-5 my-8 sm:my-0 sm:w-auto"
+          className="rounded-full border border-solid border-transparent transition-colors flex items-center justify-center bg-neutral-900 text-white border-white/10 gap-2 hover:bg-[#c27529] hover:text-white font-medium text-sm sm:text-base h-10 sm:h-12 px-4 sm:px-5 my-8 sm:my-0 sm:w-auto"
           href="/challenge/managed"
         >
           <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" strokeWidth="1.5" stroke="currentColor" className="size-6">
@@ -31,7 +31,7 @@ export default function Home() {
           Managed Challenge (Interactive)
         </a>
         <a
-          className="rounded-full border border-solid border-transparent transition-colors flex items-center justify-center bg-foreground text-background gap-2 hover:bg-[#ad9936] hover:text-background dark:hover:bg-[#ccc] font-medium text-sm sm:text-base h-10 sm:h-12 px-4 sm:px-5 my-8 sm:my-0 sm:w-auto"
+          className="rounded-full border border-solid border-transparent transition-colors flex items-center justify-center bg-neutral-900 text-white border-white/10 gap-2 hover:bg-[#ad9936] hover:text-white font-medium text-sm sm:text-base h-10 sm:h-12 px-4 sm:px-5 my-8 sm:my-0 sm:w-auto"
           href="/challenge/js"
         >
           <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" strokeWidth="1.5" stroke="currentColor" className="size-6">
@@ -42,7 +42,7 @@ export default function Home() {
           Automated (JS) Challenge
         </a>
         <a
-          className="rounded-full border border-solid border-transparent transition-colors flex items-center justify-center bg-foreground text-background gap-2 hover:bg-[#35c229] hover:text-background dark:hover:bg-[#ccc] font-medium text-sm sm:text-base h-10 sm:h-12 px-4 sm:px-5 my-8 sm:my-0 sm:w-auto"
+          className="rounded-full border border-solid border-transparent transition-colors flex items-center justify-center bg-neutral-900 text-white border-white/10 gap-2 hover:bg-[#35c229] hover:text-white font-medium text-sm sm:text-base h-10 sm:h-12 px-4 sm:px-5 my-8 sm:my-0 sm:w-auto"
           href="/log"
         >
           <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" strokeWidth="1.5" stroke="currentColor" className="size-6">
@@ -53,7 +53,7 @@ export default function Home() {
           Log (no action)
         </a>
         <a
-          className="rounded-full border border-solid border-transparent transition-colors flex items-center justify-center bg-foreground text-background gap-2 hover:bg-[#6d35c2] hover:text-background dark:hover:bg-[#ccc] font-medium text-sm sm:text-base h-10 sm:h-12 px-4 sm:px-5 my-8 sm:my-0 sm:w-auto"
+          className="rounded-full border border-solid border-transparent transition-colors flex items-center justify-center bg-neutral-900 text-white border-white/10 gap-2 hover:bg-[#6d35c2] hover:text-white font-medium text-sm sm:text-base h-10 sm:h-12 px-4 sm:px-5 my-8 sm:my-0 sm:w-auto"
           href="/ai-bots"
         >
           <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" strokeWidth="1.5" stroke="currentColor" className="size-6">

@@ -49,7 +49,34 @@ These were created automatically and are wired into `wrangler.jsonc`:
 - Traffic → Load Balancing → create a pool with two origins: this Worker and
   `onprem.aperturescience.xyz`. Add a health monitor + steering policy.
 
-### 7. AI Crawl Control (powers robots.txt / llms.txt story)
+### 7. Cloudflare Access (powers `/access` + `/access/protected`)
+Zero Trust identity + JWT validation demo. `/access` is a public explainer that
+validates any Access JWT on the request; `/access/protected` is meant to sit
+behind a real Access application so it forces login and shows verified claims.
+
+1. Zero Trust → Access → Applications → **Add an application** → **Self-hosted**.
+2. Application name e.g. `Aperture — Protected demo`. Session duration: your call.
+3. Public hostname: domain `aperturescience.xyz`, path `access/protected`
+   (this gates exactly `/access/protected`, leaving `/access` public).
+4. Add a policy using your existing IdP — e.g. Action **Allow**, include a rule
+   like *Emails ending in* `@yourdomain.com`, or **Everyone** for an open demo.
+5. Save, then open the app's **Overview** and copy the
+   **Application Audience (AUD) Tag**.
+6. Put values in `wrangler.jsonc` → `vars`:
+   - `TEAM_DOMAIN` = your team, e.g. `squireframe.cloudflareaccess.com`
+   - `POLICY_AUD` = the AUD tag from step 5 (replace `REPLACE_WITH_...`)
+7. `npm run cf-typegen` then `npm run deploy`.
+
+Notes:
+- No secret needed — validation uses the team's **public** JWKS at
+  `https://<TEAM_DOMAIN>/cdn-cgi/access/certs`.
+- The Worker reads the `Cf-Access-Jwt-Assertion` header Access injects; Access
+  itself is configured entirely in the dashboard (by hostname+path), decoupled
+  from the Worker code.
+- JSON verification endpoint: `GET /api/access` (200 + identity when verified,
+  401 + failed steps otherwise).
+
+### 8. AI Crawl Control (powers robots.txt / llms.txt story)
 - AI Crawl Control → enable, manage robots.txt, review AI Audit analytics.
 - Optionally enroll in **Pay Per Crawl** (beta) to monetize AI crawler access.
 

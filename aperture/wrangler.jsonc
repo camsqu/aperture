@@ -53,6 +53,12 @@
   ],
   // Public Turnstile site key (the secret is set via `wrangler secret put TURNSTILE_SECRET_KEY`).
   "vars": {
-    "TURNSTILE_SITE_KEY": "0x4AAAAAADp7Bgjm-PiAuqBL"
+    "TURNSTILE_SITE_KEY": "0x4AAAAAADp7Bgjm-PiAuqBL",
+    // Cloudflare Access (powers /access + /access/protected). Both are public
+    // config, not secrets: TEAM_DOMAIN is your Zero Trust team, POLICY_AUD is
+    // the Application Audience (AUD) tag of the Access app protecting
+    // /access/protected (Zero Trust → Access → Applications → Overview).
+    "TEAM_DOMAIN": "squireframe.cloudflareaccess.com",
+    "POLICY_AUD": "a64e42a0598aee04dbacd1920acac81c6a7ace9b05263498cfe959239968ffd8"
   }
 }
